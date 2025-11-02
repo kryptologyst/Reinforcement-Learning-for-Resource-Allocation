@@ -1,0 +1,34 @@
+# Simple configuration for quick testing
+
+environment:
+  env_type: "simple"
+  num_jobs: 2
+  total_resources: 50
+  max_steps: 5
+  reward_type: "matching"
+  noise_level: 0.05
+  seed: 42
+
+agent:
+  type: "ppo"
+  learning_rate: 0.001
+  gamma: 0.99
+  batch_size: 32
+  buffer_size: 10000
+  hidden_dims: [32, 32]
+
+training:
+  total_timesteps: 5000
+  eval_freq: 500
+  save_freq: 2500
+  log_freq: 50
+
+logging:
+  level: "INFO"
+  tensorboard: true
+  wandb: false
+
+paths:
+  models: "models/"
+  logs: "logs/"
+  checkpoints: "checkpoints/"
